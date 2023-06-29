@@ -22,6 +22,10 @@ configurations_urlpatterns = [
     path('configurations/', include('configurations.urls')),
 ]
 
+files_urlpatterns = [
+    path('files/', include('files.urls')),
+]
+
 settings_urlpatterns = [
     path('settings/', include('settings.urls')),
 ]
