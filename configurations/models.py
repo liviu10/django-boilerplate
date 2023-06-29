@@ -95,7 +95,7 @@ class VatType(models.Model):
 class WarehouseType(models.Model):
     code = models.CharField(max_length=3, default='', unique=True, null=False, blank=True)
     name = models.CharField(max_length=255, default='', null=True, blank=True)
-    type = models.IntegerField(max_length=255, default='', null=True, blank=True)
+    type = models.IntegerField(default='', null=True, blank=True)
 
     class Meta:
         verbose_name_plural = 'Warehouse types'
