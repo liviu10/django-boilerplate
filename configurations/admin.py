@@ -9,20 +9,6 @@ class AccountTypeAdmin(admin.ModelAdmin):
     list_display = ('code', 'name')
 
 
-@admin.register(City)
-class CityAdmin(admin.ModelAdmin):
-    model = City
-    search_fields = ['name']
-    list_display = ('siruta_code', 'name', 'longitude', 'latitude', 'google_maps_url')
-
-
-@admin.register(Company)
-class CompanyAdmin(admin.ModelAdmin):
-    model = Company
-    search_fields = ['name', 'fiscal_code', 'registration_number']
-    list_display = ('name', 'fiscal_code', 'registration_number', 'social_capital')
-
-
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):
     model = Country
@@ -35,6 +21,13 @@ class CountyAdmin(admin.ModelAdmin):
     model = County
     search_fields = ['name']
     list_display = ('name',)
+
+
+@admin.register(City)
+class CityAdmin(admin.ModelAdmin):
+    model = City
+    search_fields = ['name']
+    list_display = ('siruta_code', 'name', 'longitude', 'latitude', 'google_maps_url')
 
 
 @admin.register(CurrencyCode)
@@ -56,6 +49,27 @@ class EconomicActivityAdmin(admin.ModelAdmin):
     model = EconomicActivity
     search_fields = ['code', 'name']
     list_display = ('code', 'name')
+
+
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
+    model = Company
+    search_fields = ['name', 'fiscal_code', 'registration_number']
+    list_display = ('name', 'fiscal_code', 'registration_number', 'social_capital')
+
+
+@admin.register(CompanyDetails)
+class CompanyDetailsAdmin(admin.ModelAdmin):
+    model = CompanyDetails
+    search_fields = ['bank_name', 'phone']
+    list_display = ('address', 'bank_name', 'bank_account', 'phone', 'email_address')
+
+
+@admin.register(CompanySettings)
+class CompanySettingsAdmin(admin.ModelAdmin):
+    model = CompanySettings
+    search_fields = ['name']
+    list_display = ('name',)
 
 
 @admin.register(ProductType)

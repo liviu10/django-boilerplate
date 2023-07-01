@@ -8,18 +8,6 @@ class AccountTypesSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class CitiesSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = City
-        fields = '__all__'
-
-
-class CompaniesSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Company
-        fields = '__all__'
-
-
 class CountriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Country
@@ -29,6 +17,12 @@ class CountriesSerializer(serializers.ModelSerializer):
 class CountiesSerializer(serializers.ModelSerializer):
     class Meta:
         model = County
+        fields = '__all__'
+
+
+class CitiesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = City
         fields = '__all__'
 
 
@@ -47,6 +41,24 @@ class DocumentTypesSerializer(serializers.ModelSerializer):
 class EconomicActivitiesSerializer(serializers.ModelSerializer):
     class Meta:
         model = EconomicActivity
+        fields = '__all__'
+
+
+class CompaniesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Company
+        fields = '__all__'
+
+
+class CompanyDetailsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CompanyDetails
+        fields = '__all__'
+
+
+class CompanySettingsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CompanySettings
         fields = '__all__'
 
 

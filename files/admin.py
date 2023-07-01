@@ -6,7 +6,7 @@ from files.models import *
 class AccountAdmin(admin.ModelAdmin):
     model = Account
     search_fields = ['code', 'name', 'is_active']
-    list_display = ('code', 'name', 'is_active')
+    list_display = ('code', 'name', 'get_is_active_display')
 
 
 @admin.register(Client)

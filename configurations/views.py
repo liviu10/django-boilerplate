@@ -2,19 +2,10 @@ from rest_framework import viewsets
 from configurations.serializers import *
 from configurations.models import *
 
+
 class AccountTypesViewset(viewsets.ModelViewSet):
     queryset = AccountType.objects.all()
     serializer_class = AccountTypesSerializer
-
-
-class CitiesViewset(viewsets.ModelViewSet):
-    queryset = City.objects.all()
-    serializer_class = CitiesSerializer
-
-
-class CompaniesViewset(viewsets.ModelViewSet):
-    queryset = Company.objects.all()
-    serializer_class = CompaniesSerializer
 
 
 class CountriesViewset(viewsets.ModelViewSet):
@@ -25,6 +16,11 @@ class CountriesViewset(viewsets.ModelViewSet):
 class CountiesViewset(viewsets.ModelViewSet):
     queryset = County.objects.all()
     serializer_class = CountiesSerializer
+
+
+class CitiesViewset(viewsets.ModelViewSet):
+    queryset = City.objects.all()
+    serializer_class = CitiesSerializer
 
 
 class CurrencyCodesViewset(viewsets.ModelViewSet):
@@ -40,6 +36,21 @@ class DocumentTypesViewset(viewsets.ModelViewSet):
 class EconomicActivitiesViewset(viewsets.ModelViewSet):
     queryset = EconomicActivity.objects.all()
     serializer_class = EconomicActivitiesSerializer
+
+
+class CompaniesViewset(viewsets.ModelViewSet):
+    queryset = Company.objects.all()
+    serializer_class = CompaniesSerializer
+
+
+class CompanyDetailsViewset(viewsets.ModelViewSet):
+    queryset = CompanyDetails.objects.all()
+    serializer_class = CompanyDetailsSerializer
+
+
+class CompanySettingsViewset(viewsets.ModelViewSet):
+    queryset = CompanySettings.objects.all()
+    serializer_class = CompanySettingsSerializer
 
 
 class ProductTypesViewset(viewsets.ModelViewSet):

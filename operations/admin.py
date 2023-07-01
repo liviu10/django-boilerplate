@@ -17,32 +17,6 @@ class CashAndBankRegisterAdmin(admin.ModelAdmin):
     )
 
 
-@admin.register(ConsumptionReceipt)
-class ConsumptionReceiptAdmin(admin.ModelAdmin):
-    model = ConsumptionReceipt
-    search_fields = ['document_date', 'document_number']
-    list_display = (
-        'document_date',
-        'document_number',
-        'document_note',
-        'gross_value',
-        'net_value'
-    )
-
-
-@admin.register(ConsumptionReceiptLine)
-class ConsumptionReceiptLinesAdmin(admin.ModelAdmin):
-    model = ConsumptionReceiptLine
-    search_fields = ['name']
-    list_display = (
-        'name',
-        'quantity',
-        'unit_gross_value',
-        'vat_amount_value',
-        'unit_net_value'
-    )
-
-
 @admin.register(Invoice)
 class InvoicesAdmin(admin.ModelAdmin):
     model = Invoice
@@ -52,6 +26,19 @@ class InvoicesAdmin(admin.ModelAdmin):
         'vat_on_cash_received',
         'document_date',
         'document_due_date',
+        'gross_value',
+        'net_value'
+    )
+
+
+@admin.register(ConsumptionReceipt)
+class ConsumptionReceiptAdmin(admin.ModelAdmin):
+    model = ConsumptionReceipt
+    search_fields = ['document_date', 'document_number']
+    list_display = (
+        'document_date',
+        'document_number',
+        'document_note',
         'gross_value',
         'net_value'
     )
@@ -71,6 +58,19 @@ class InvoiceLinesAdmin(admin.ModelAdmin):
     )
 
 
+@admin.register(ConsumptionReceiptLine)
+class ConsumptionReceiptLinesAdmin(admin.ModelAdmin):
+    model = ConsumptionReceiptLine
+    search_fields = ['name']
+    list_display = (
+        'name',
+        'quantity',
+        'unit_gross_value',
+        'vat_amount_value',
+        'unit_net_value'
+    )
+
+
 @admin.register(SalesInvoice)
 class SalesInvoicesAdmin(admin.ModelAdmin):
     model = SalesInvoice
@@ -85,6 +85,19 @@ class SalesInvoicesAdmin(admin.ModelAdmin):
     )
 
 
+@admin.register(ShippingNote)
+class ShippingNotesAdmin(admin.ModelAdmin):
+    model = SalesInvoice
+    search_fields = ['document_number', 'document_date']
+    list_display = (
+        'document_number',
+        'document_date',
+        'gross_value',
+        'net_value',
+        'document_note'
+    )
+
+
 @admin.register(SalesInvoiceLine)
 class SalesInvoiceLinesAdmin(admin.ModelAdmin):
     model = SalesInvoiceLine
@@ -96,19 +109,6 @@ class SalesInvoiceLinesAdmin(admin.ModelAdmin):
         'discount',
         'vat_amount_value',
         'unit_net_value'
-    )
-
-
-@admin.register(ShippingNote)
-class ShippingNotesAdmin(admin.ModelAdmin):
-    model = SalesInvoice
-    search_fields = ['document_number', 'document_date']
-    list_display = (
-        'document_number',
-        'document_date',
-        'gross_value',
-        'net_value',
-        'document_note'
     )
 
 
