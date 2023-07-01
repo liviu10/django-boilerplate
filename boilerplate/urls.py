@@ -26,6 +26,10 @@ files_urlpatterns = [
     path('files/', include('files.urls')),
 ]
 
+operations_urlpatterns = [
+    path('operations/', include('operations.urls')),
+]
+
 settings_urlpatterns = [
     path('settings/', include('settings.urls')),
 ]
@@ -33,4 +37,4 @@ settings_urlpatterns = [
 urlpatterns = [
     path('', RedirectView.as_view(url='/admin/')),
     path('admin/', admin.site.urls),
-] + settings_urlpatterns + configurations_urlpatterns
+] + configurations_urlpatterns + files_urlpatterns + operations_urlpatterns + settings_urlpatterns

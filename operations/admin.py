@@ -28,3 +28,98 @@ class ConsumptionReceiptAdmin(admin.ModelAdmin):
         'gross_value',
         'net_value'
     )
+
+
+@admin.register(ConsumptionReceiptLine)
+class ConsumptionReceiptLinesAdmin(admin.ModelAdmin):
+    model = ConsumptionReceiptLine
+    search_fields = ['name']
+    list_display = (
+        'name',
+        'quantity',
+        'unit_gross_value',
+        'vat_amount_value',
+        'unit_net_value'
+    )
+
+
+@admin.register(Invoice)
+class InvoicesAdmin(admin.ModelAdmin):
+    model = Invoice
+    search_fields = ['document_number', 'document_date', 'document_due_date']
+    list_display = (
+        'document_number',
+        'vat_on_cash_received',
+        'document_date',
+        'document_due_date',
+        'gross_value',
+        'net_value'
+    )
+
+
+@admin.register(InvoiceLine)
+class InvoiceLinesAdmin(admin.ModelAdmin):
+    model = InvoiceLine
+    search_fields = ['name']
+    list_display = (
+        'name',
+        'quantity',
+        'unit_gross_value',
+        'discount',
+        'vat_amount_value',
+        'unit_net_value'
+    )
+
+
+@admin.register(SalesInvoice)
+class SalesInvoicesAdmin(admin.ModelAdmin):
+    model = SalesInvoice
+    search_fields = ['document_number', 'document_date', 'document_due_date']
+    list_display = (
+        'document_number',
+        'electronic_invoice',
+        'document_date',
+        'document_due_date',
+        'gross_value',
+        'net_value'
+    )
+
+
+@admin.register(SalesInvoiceLine)
+class SalesInvoiceLinesAdmin(admin.ModelAdmin):
+    model = SalesInvoiceLine
+    search_fields = ['name']
+    list_display = (
+        'name',
+        'quantity',
+        'unit_gross_value',
+        'discount',
+        'vat_amount_value',
+        'unit_net_value'
+    )
+
+
+@admin.register(ShippingNote)
+class ShippingNotesAdmin(admin.ModelAdmin):
+    model = SalesInvoice
+    search_fields = ['document_number', 'document_date']
+    list_display = (
+        'document_number',
+        'document_date',
+        'gross_value',
+        'net_value',
+        'document_note'
+    )
+
+
+@admin.register(ShippingNoteLine)
+class ShippingNoteLinesAdmin(admin.ModelAdmin):
+    model = ShippingNoteLine
+    search_fields = ['name']
+    list_display = (
+        'name',
+        'quantity',
+        'unit_gross_value',
+        'vat_amount_value',
+        'unit_net_value'
+    )
